@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="container-fluid">
-      <Header @doSearch="setSearch($event)" :inputValue="textValue" />
+      <Header @doSearch="setSearch($event)" :inputValue="completedApi" />
       <Main />
     </div>
   </div>
@@ -16,17 +16,18 @@ export default {
   name: "App",
   components: {
     // HelloWorld,
-    Main,
     Header,
+    Main,
   },
   data() {
     return {
-      textValue: '',
+      completedApi: '',
+      staticApi: 'https://api.themoviedb.org/3/search/movie?api_key=f134f75db1d5edf07240f2412a109c60&query=',
     }
   },
   methods: {
     setSearch(value) {
-      this.textValue = value;
+      this.completedApi = this.staticApi + value;
     }
   },
 };

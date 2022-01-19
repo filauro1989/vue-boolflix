@@ -1,5 +1,12 @@
 <template>
-    <div>asd</div>
+    <ul>
+        <li>
+            <h3>titolo</h3>
+            <h3>titolo originale</h3>
+            <h3>lingua</h3>
+            <h3>voto</h3>
+        </li>
+    </ul>
 </template>
 
 <script>
@@ -7,15 +14,15 @@ import axios from 'axios';
 
 export default {
     name: "Main",
+    props: "completedApi",
     data() {
         return {
-            queryPath: 'https://api.themoviedb.org/3/search/movie?api_key=f134f75db1d5edf07240f2412a109c60',
-            movies: [],
+            selectedMovies: [],
         }
     },
     methods: {
         getMovies() {
-            axios.get(this.queryPath)
+            axios.get()
             .then()
             .catch()
         }
