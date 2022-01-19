@@ -34,7 +34,9 @@ export default {
 </script>
 
 <style lang="scss">
-@import "~bootstrap/scss/bootstrap"
+@import "~bootstrap/scss/bootstrap";
+@import "~mdb-ui-kit/css/mdb.min.css";
+
 // /* #app {
 //   font-family: Avenir, Helvetica, Arial, sans-serif;
 //   -webkit-font-smoothing: antialiased;

@@ -28,8 +28,8 @@ export default {
                 }
             })
             .then((result) => {
-                this.selectedMovies = result.data.results
-                this.$emit('doSearch', this.selectedMovies)
+                this.selectedMovies = result.data.results;
+                this.$emit('doSearch', this.selectedMovies);
             })
             .catch((error) => {
                 console.log(error);
