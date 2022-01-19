@@ -1,30 +1,22 @@
 <template>
     <ul>
-        <li>
-            <h3>titolo</h3>
-            <h3>titolo originale</h3>
-            <h3>lingua</h3>
-            <h3>voto</h3>
+        <li v-for="(movie, index) in Movies" :key="index">
+            <h3>{{movie.title}}</h3>
+            <h3>{{movie.original_title}}</h3>
+            <h3>{{movie.original_language}}</h3>
+            <h3>{{movie.vote_average}}</h3>
         </li>
     </ul>
 </template>
 
 <script>
-import axios from 'axios';
 
 export default {
     name: "Main",
-    props: "completedApi",
+    props: ['Movies'],
     data() {
         return {
-            selectedMovies: [],
-        }
-    },
-    methods: {
-        getMovies() {
-            axios.get()
-            .then()
-            .catch()
+
         }
     },
 }

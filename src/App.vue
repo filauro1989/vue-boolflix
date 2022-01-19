@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <div class="container-fluid">
-      <Header @doSearch="setSearch($event)" :inputValue="completedApi" />
-      <Main />
+      <Header @doSearch="setSearch($event)" />
+      <!-- :inputValue="Selection"  -->
+      <Main :Movies="Selection"/>
     </div>
   </div>
 </template>
@@ -21,13 +22,12 @@ export default {
   },
   data() {
     return {
-      completedApi: '',
-      staticApi: 'https://api.themoviedb.org/3/search/movie?api_key=f134f75db1d5edf07240f2412a109c60&query=',
+      Selection: '',
     }
   },
   methods: {
     setSearch(value) {
-      this.completedApi = this.staticApi + value;
+      this.Selection = value;
     }
   },
 };
