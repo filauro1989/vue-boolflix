@@ -1,8 +1,10 @@
 <template>
-
+    <div>asd</div>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
     name: "Main",
     data() {
@@ -14,9 +16,7 @@ export default {
     methods: {
         getMovies() {
             axios.get(this.queryPath)
-            .then((result) => {
-                this.movies = 
-            })
+            .then()
             .catch()
         }
     },
