@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <Header @doSearch="setSearch($event)" />
       <!-- :inputValue="Selection"  -->
-      <Main :Movies="Selection"/>
+      <Main :Movies="Selection" :baseLink="imgBase"/>
     </div>
   </div>
 </template>
@@ -26,12 +26,14 @@ export default {
         films:[],
         series:[],
       },
+      imgBase: 'https://image.tmdb.org/t/p/w342/',
     }
   },
   methods: {
     setSearch(value) {
       this.Selection.films = value.selectedMovies;
       this.Selection.series = value.selectedTv;
+      console.log(value.selectedMovies);
     }
   },
 };
