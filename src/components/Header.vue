@@ -1,7 +1,7 @@
 <template>
     <div class="search">
-        <input @keyup.enter="getApi" id="search" type="text" v-model="inputText" name="search">
-        <button @click="getApi" class="btn btn-primary" type="submit">
+        <input @keyup.enter="getFilms" id="search" type="text" v-model="inputText" name="search">
+        <button @click="getFilms" class="btn btn-primary" type="submit">
             Cerca
         </button>
     </div>
@@ -13,20 +13,24 @@ export default {
     name: "Header",
     data() {
         return {
+            query: 'https://api.themoviedb.org/3/search/',
+            api_key: 'f134f75db1d5edf07240f2412a109c60',
+            language: 'en-US',
             inputText:'',
             inputT:'',
             selectedMovies: [],
         }
     },
     methods: {
-        getApi: function() {
-            this.inputT = this.inputText.replace(/\s/g, "+");
-            axios.get("https://api.themoviedb.org/3/search/movie?api_key=f134f75db1d5edf07240f2412a109c60&query=",
-            {
-                params: {
-                    query: this.inputT
-                }
-            })
+        getFilms: function() {
+            const endpoint = 'movie';
+            const parameters = {
+                api_key: this.api_key,
+                language: this.language,
+                query: this.inputText,
+            }
+            // this.inputT = this.inputText.replace(/\s/g, "+");
+            axios.get(`${this.query}${endpoint}`, { params: parameters })
             .then((result) => {
                 this.selectedMovies = result.data.results;
                 this.$emit('doSearch', this.selectedMovies);
