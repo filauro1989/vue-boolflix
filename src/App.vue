@@ -22,12 +22,16 @@ export default {
   },
   data() {
     return {
-      Selection: '',
+      Selection: {
+        films:[],
+        series:[],
+      },
     }
   },
   methods: {
     setSearch(value) {
-      this.Selection = value;
+      this.Selection.films = value.selectedMovies;
+      this.Selection.series = value.selectedTv;
     }
   },
 };
