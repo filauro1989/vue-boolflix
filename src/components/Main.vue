@@ -21,9 +21,15 @@
         </ul>
             <h1 v-else> Nessuna Serie Trovata </h1>
     </main> -->
-    <ul v-if="Movies.films.length > 0">
-        <Card v-for="(movie, index) in Movies.films" :key="index + 'film'" :imgLink="baseLink + movie.poster_path" :title="movie.title" :originalTitle="movie.original_title" :originalLanguage="movie.original_language" :vote="movie.vote_average" />
-    </ul>
+    <main>
+        <ul v-if="Movies.films.length > 0">
+            <Card v-for="(movie, index) in Movies.films" :key="index + 'film'" :imgLink="baseLink + movie.poster_path" :title="movie.title" :originalTitle="movie.original_title" :originalLanguage="movie.original_language" :vote="movie.vote_average" />
+        </ul>
+        <ul v-if="Movies.films.length > 0">
+            <Card v-for="(movie, index) in Movies.series" :key="index + 'series'" :imgLink="baseLink + movie.poster_path" :title="movie.title" :originalTitle="movie.original_title" :originalLanguage="movie.original_language" :vote="movie.vote_average" />
+        </ul>
+    </main>
+
 
 </template>
 
