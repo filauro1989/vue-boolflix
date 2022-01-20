@@ -26,7 +26,7 @@ export default {
         films:[],
         series:[],
       },
-      imgBase: 'https://image.tmdb.org/t/p/w342/',
+      imgBase: 'https://image.tmdb.org/t/p/w342',
     }
   },
   methods: {
