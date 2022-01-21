@@ -1,6 +1,6 @@
 <template>
 <main>
-        <li>
+        <div>
             <img :src="imgLink" alt="">
             <h3>{{title}}</h3>
             <h3>{{originalTitle}}</h3>
@@ -9,7 +9,7 @@
             <div v-for="number in 5" 
             :key="number" 
             :class="(number <= numTransform(vote)) ? 'fas fa-star' : 'far fa-star'"></div>
-        </li>
+        </div>
 </main>
 </template>
 

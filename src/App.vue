@@ -1,10 +1,8 @@
 <template>
   <div id="app">
-    <div class="container-fluid">
       <Header @doSearch="setSearch($event)" />
       <!-- :inputValue="Selection"  -->
       <Main :Movies="Selection" :baseLink="imgBase"/>
-    </div>
   </div>
 </template>
 
@@ -40,8 +38,9 @@ export default {
 </script>
 
 <style lang="scss">
-@import "~bootstrap/scss/bootstrap";
-@import "~mdb-ui-kit/css/mdb.min.css";
+  @import "~bootstrap/scss/bootstrap";
+  @import "~mdb-ui-kit/css/mdb.min.css";
+  @import "./assets/scss/style.scss";
 
 // /* #app {
 //   font-family: Avenir, Helvetica, Arial, sans-serif;

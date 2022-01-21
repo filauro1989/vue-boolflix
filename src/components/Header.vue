@@ -1,14 +1,14 @@
 <template>
-    <div class="search">
-        <input @keyup.enter="getMerged" id="search" type="text" v-model="inputText" name="search">
-        <button @click="getMerged" class="btn btn-primary" type="submit">
-            Cerca
-        </button>
+    <div class="container-fluid navbar">
+        <div class="logo">BOOLFLIX</div>
+        <div class="search">
+            <input @keyup.enter="getMerged" id="search" type="text" v-model="inputText" name="search">
+        </div>
     </div>
 </template>
 
 <script>
-import axios from 'axios'
+import axios from 'axios';
 export default {
     name: "Header",
     data() {
@@ -70,6 +70,18 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+
+    .navbar {
+        background-color: black;
+        height: 50px;
+    }
+    .logo {
+        color: red;
+        font-size: 1.5em;
+    }
+    .search input {
+        height: 25px;
+    }
 
 </style>

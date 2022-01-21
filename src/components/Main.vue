@@ -21,13 +21,15 @@
         </ul>
             <h1 v-else> Nessuna Serie Trovata </h1>
     </main> -->
-    <main>
-        <ul v-if="Movies.films.length > 0">
-            <Card v-for="(movie, index) in Movies.films" :key="index + 'film'" :imgLink="baseLink + movie.poster_path" :title="movie.title" :originalTitle="movie.original_title" :originalLanguage="movie.original_language" :vote="movie.vote_average" />
-        </ul>
-        <ul v-if="Movies.films.length > 0">
-            <Card v-for="(movie, index) in Movies.series" :key="index + 'series'" :imgLink="baseLink + movie.poster_path" :title="movie.title" :originalTitle="movie.original_title" :originalLanguage="movie.original_language" :vote="movie.vote_average" />
-        </ul>
+    <main class="container-fluid main-container">
+            <div class="row">
+                    <div class="card-list" v-if="Movies.films.length > 0">
+                            <Card v-for="(movie, index) in Movies.films" :key="index + 'film'" :imgLink="baseLink + movie.poster_path" :title="movie.title" :originalTitle="movie.original_title" :originalLanguage="movie.original_language" :vote="movie.vote_average" />
+                    </div>
+                    <div class="card-list" v-if="Movies.films.length > 0">
+                        <Card v-for="(movie, index) in Movies.series" :key="index + 'series'" :imgLink="baseLink + movie.poster_path" :title="movie.title" :originalTitle="movie.original_title" :originalLanguage="movie.original_language" :vote="movie.vote_average" />
+                    </div>
+            </div>
     </main>
 
 
@@ -51,5 +53,13 @@ export default {
 </script>
 
 <style lang="scss">
+
+    .card-list {
+        list-style-type: none;
+    }
+    .main-container {
+        background-color: #434343;
+        height: calc(100vh - 50px);
+    }
 
 </style>
